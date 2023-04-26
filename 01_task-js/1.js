@@ -1,3 +1,5 @@
+//Что выведится на экран ?
+
 const arr = [10, 12, 15, 21];
 for (var i = 0; i < arr.length; i++) {
     setTimeout(function() {
@@ -5,14 +7,12 @@ for (var i = 0; i < arr.length; i++) {
     }, 3000);
 }
 
-
-
 { //! Правильная реализация выглядит примерно так:
 
     const arr = [10, 12, 15, 21];
     for (var i = 0; i < arr.length; i++) {
-        // pass in the variable i so that each function
-        // has access to the correct index
+        // передать переменную i так, чтобы каждая функция
+        // имела доступ к правильному индексу
         setTimeout(function(i_local) {
             return function() {
                 console.log('The index of this number is: ' + i_local);
@@ -25,9 +25,8 @@ for (var i = 0; i < arr.length; i++) {
 { // Или так:
     const arr = [10, 12, 15, 21];
     for (let i = 0; i < arr.length; i++) {
-        // using the ES6 let syntax, it creates a new binding
-        // every single time the function is called
-        // read more here: http://exploringjs.com/es6/ch_variables.html#sec_let-const-loop-heads
+        // используя синтаксис let ES6, он создает новую привязку
+        // каждый раз, когда функция вызывается
         setTimeout(function() {
             console.log('The index of this number is: ' + i);
         }, 3000);
